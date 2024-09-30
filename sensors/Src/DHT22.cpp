@@ -22,7 +22,7 @@ namespace Sensors
 
     DHT22Sensor::DHT22Sensor(int gpioPin) : SensorBase(), gpio(gpioPin, Periferia::Direction::Input) {} // Pass the pin to the GPIO constructor
 
-    bool DHT22Sensor::init()
+    bool DHT22Sensor::open()
     {
         if (!gpio.open(O_WRONLY))
         {

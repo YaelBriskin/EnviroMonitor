@@ -16,7 +16,7 @@ public:
 // Virtual destructor to ensure proper cleanup of derived classes
     virtual ~SensorBase() = default;
     // Initialize the sensor
-    virtual bool init() = 0;
+    virtual bool open() = 0;
     // Read data from the sensor
     virtual bool read(SensorData& data) = 0;
     // Close the sensor and release resources

@@ -20,12 +20,11 @@ namespace Sensors
         // DHT22Sensor class constructor, accepts GPIO pin number
         explicit DHT22Sensor(int gpioPin);
         // Initialize the sensor, overrides the virtual method from SensorBase
-        bool init() override;
+        bool open() override;
         // Reading data from the sensor: temperature and humidity
         bool read(SensorData& data) override; 
         // Close the sensor
         void close() override;
-         bool open();
     private:
         Periferia::GPIO gpio; // Object for working with GPIO
         void resetSignal();
