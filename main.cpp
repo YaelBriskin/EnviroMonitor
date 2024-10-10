@@ -5,21 +5,16 @@
 int main() 
 {
     Sensors::DHT22Sensor dht22(GPIO_DHT22);
-    if (!dht22.open()) 
-    {
-        std::cerr << "Failed to initialize DHT22 sensor!" << std::endl;
-        return 1;
-    }
+
     Sensors::SensorData data;
     if (dht22.read(data)) 
     {
-        std::cout << "Temperature: " << data.temperature << " C" << std::endl;
-        std::cout << "Humidity: " << data.humidity << " %" << std::endl;
-    } else 
+        printf("Temperature: %.2f C\n", data.temperature);
+        printf("Humidity: %.2f %%\n", data.humidity);
+    } 
+    else 
     {
-        std::cerr << "Failed to read data from DHT22!" << std::endl;
+        printf("Failed to read data from DHT22!\n");
     }
-
-    dht22.close();
     return 0;
 }

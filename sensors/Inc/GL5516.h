@@ -1,30 +1,26 @@
-#ifndef GL5516_SENSOR_H
-#define GL5516_SENSOR_H
+// #ifndef GL5516_SENSOR_H
+// #define GL5516_SENSOR_H
 
-#include "SensorBase.h"
-#include <iostream>
-#include "../periferia/Inc/gpio.h"
+// #include "SensorBase.h"
+// #include <iostream>
+// #include "../../periferia/Inc/gpio.h"
 
-namespace Sensors {
+// namespace Sensors
+// {
 
-class GL5516Sensor : public SensorBase 
-{
-public:
+//     class GL5516Sensor : public SensorBase
+//     {
+//     public:
+//         explicit GL5516Sensor(int gpioPin);
+//         bool open() override;
+//         bool read(SensorData &data) override;
+//         void close() override;
 
- explicit GL5516Sensor(int gpioPin);
-    // Инициализация фоторезистора
-    bool init() override;
+//     private:
+//         int gpioPin;
+//         Periferia::GPIO gpio;
+//     };
 
-    // Чтение уровня света
-    bool read(SensorData& data) override;
+// } // namespace Sensors
 
-    // Закрытие соединения с фоторезистором
-    void close() override ;
-
-private:
-    int gpioPin;
-};
-
-} // namespace Sensors
-
-#endif // GL5516_SENSOR_H
+// #endif // GL5516_SENSOR_H
